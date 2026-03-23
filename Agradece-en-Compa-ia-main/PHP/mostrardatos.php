@@ -1,4 +1,3 @@
-
 <?php
 require 'configdb.php';
   function conectar(){
@@ -13,12 +12,6 @@ function consultar(){
     $resultado=$conexion->query($sql);
     while ($fila=$resultado->fetch_array()){
         echo '<option value="' .$fila["puesto"] .'">'.$fila["puesto"].'-'.$fila["nombre"].'</option>';
-
-        /* Esto sería para mostrar las filas sin el select
-        echo "<p>"
-        echo $fila["puesto"].'-'.$fila["nombre"];
-        echo "</p>";
-        */
     }
 }
   ?>
@@ -32,9 +25,7 @@ function consultar(){
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="estilo.css">
 </head>
-
 <body>
-
 <header>
     <h1><span class="textog">A</span>GRADECE <span class="textop">EN</span> <span class="textog">C</span>OMPAÑÍA</h1>
 </header>
@@ -45,21 +36,14 @@ function consultar(){
     </nav>
 <main>
     <section class="formulario">
-
-
-
-        <form action="agradecimientos.php">
+        <form action="">
             <label><b>Alumno:</b></label>
             <select name="alumno">
             <?php
             consultar();
             ?>
             </select>
-            <textarea name="mensaje">
-
-            </textarea>
-
-
+            <textarea name="mensaje"></textarea>
             <button type="submit">ENVIAR</button>
         </form>
 
